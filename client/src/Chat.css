@@ -1,0 +1,145 @@
+.chat-container {
+  width: 60vw;
+  max-width: 90%;
+  height: 90vh;
+  background: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  background: #333;
+  color: #fff;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header div {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.chat-header button {
+  background: #e74c3c;
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chat-header button:hover {
+  background: #c0392b;
+}
+
+.messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background: #181818;
+}
+
+.messages .me {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.messages .user {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.messages .me span,
+.messages .user span {
+  display: block;
+  font-weight: bold;
+  color: #bbb;
+}
+
+.messages .me div {
+  display: inline-block;
+  background: #0078d7;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.messages .user div {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.chat-form {
+  background: #1e1e1e;
+  border-top: 1px solid #444;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-container input[type="text"] {
+  width: 70%;
+  padding: 12px 40px 12px 12px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #222;
+  color: #e0e0e0;
+}
+
+.emoji-button {
+  position: relative;
+  z-index: 5;
+  right: 5%;
+  top: 0.4rem;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.emoji-picker {
+  position: absolute;
+  bottom: 50px;
+  right: 10px;
+  z-index: 10;
+}
+
+.chat-form input[type="submit"] {
+  background: #0078d7;
+  border: none;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chat-form input[type="submit"]:hover {
+  background: #005bb5;
+}
+
+.messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+  background-color: #777;
+}

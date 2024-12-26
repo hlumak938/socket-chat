@@ -6,11 +6,8 @@ const Messages = ({ messages, name }) => {
         const className = itsMe ? 'me' : 'user';
 
         return (
-          <div key={i} className={`${className}`}>
-            <span>
-              {user.name}
-            </span>
-
+          <div key={i} className={className}>
+            <span>{user.name}</span>
             <div>{message}</div>
           </div>
         );

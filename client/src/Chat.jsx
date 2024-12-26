@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router';
 
 import icon from './assets/emoji.svg'
 import Messages from './Messages';
+import './Chat.css'
 
 const socket = io.connect('http://localhost:5000');
 
@@ -57,20 +58,18 @@ const Chat = () => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="chat-container">
+      <div className="chat-header">
         <div>{`Room ${params.room}`}</div>
         <div>{usersCount} users in this room</div>
-        <button onClick={leftRoom}>
-          Left the room
-        </button>
+        <button onClick={leftRoom}>Left the room</button>
       </div>
-      <div>
+      <div className="messages">
         <Messages messages={state} name={params.name} />
       </div>
 
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form className="chat-form" onSubmit={handleSubmit}>
+        <div className="input-container">
           <input
             type="text"
             name="message"
@@ -80,23 +79,28 @@ const Chat = () => {
             autoComplete="off"
             required
           />
+          <img
+            className="emoji-button"
+            src={icon}
+            alt="emojies"
+            onClick={() => setIsOpen(!isOpen)}
+          />
         </div>
         <div>
-          <img width='50px' src={icon} alt="emojies" onClick={() => setIsOpen(!isOpen)} />
-
           {isOpen && (
-            <div>
-              <EmojiPicker onEmojiClick={({emoji}) => setMessage(`${message}${emoji}`)} />
+            <div className="emoji-picker">
+              <EmojiPicker
+                onEmojiClick={({ emoji }) => setMessage(`${message}${emoji}`)}
+              />
             </div>
           )}
         </div>
-
         <div>
           <input type="submit" value="Send a message" />
         </div>
       </form>
     </div>
-  )
+  );
 };
 
 export default Chat;
